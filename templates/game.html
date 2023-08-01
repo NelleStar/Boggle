@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Start Screen -->
+<div id="start-screen">
+    <h1>Boggle Game</h1>
+    <button id="start-button">Start Time</button>
+</div>
+
+<!-- Board screen hidden initially -->
+<div id="board-container">
+    <!-- Boggle board table -->
+    <table id="board">
+        {% for row in board %}
+        <tr>
+            {% for letter in row %}
+            <td>
+                {{ letter }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+        
+    <form id="word-form">
+        <label for="word">Enter your word:</label>
+        <input type="text" id="word" name="word">
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+
+    <div id="result">Points:</div>
+
+    <div id="timer"> Time Reamaining: --</div>
+</div>
+
+<!-- Include the main.js script -->
+
+{% endblock %}
